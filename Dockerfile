@@ -15,5 +15,7 @@ RUN pip install --no-cache-dir --upgrade pip \
 # Copier le contenu du répertoire de votre projet dans le conteneur
 COPY . .
 
+EXPOSE 5000
+
 # Commande par défaut à exécuter lorsque le conteneur démarre
 CMD ["python", "app.py"]
