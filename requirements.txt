@@ -1,0 +1,10 @@
+Flask==3.0.3
+numpy==1.26.4
+openai==1.17.0
+pandas==2.2.2
+python-dotenv==1.0.1
+selectolax==0.3.21
+selenium==4.19.0
+spacy==3.7.4
+vaderSentiment==3.3.2
+vaderSentiment==3.3.2
