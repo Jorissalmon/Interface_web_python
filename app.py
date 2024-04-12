@@ -30,6 +30,8 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 app = Flask(__name__)
+# Définir le port à écouter
+port = 5000
 
 #Ce qui va être lancé quand la page HTML est exécuté
 @app.route('/', methods=['GET', 'POST'])
@@ -307,4 +309,4 @@ def generate_summary(report,api_key):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=port)
