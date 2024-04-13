@@ -91,6 +91,15 @@ def scrape_amazon_reviews(product_url):
 
     chromedriver_autoinstaller.install()
 
+    option.add_argument("--disable-gpu")
+    option.add_argument("--disable-extensions")
+    option.add_argument("--disable-infobars")
+    option.add_argument("--start-maximized")
+    option.add_argument("--disable-notifications")
+    option.add_argument('--headless')
+    option.add_argument('--no-sandbox')
+    option.add_argument('--disable-dev-shm-usage')
+
     driver = webdriver.Chrome(options=options)
 
     try:
