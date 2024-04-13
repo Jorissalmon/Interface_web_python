@@ -91,7 +91,7 @@ def scrape_amazon_reviews(product_url):
     reviews = []  # Dictionnaire pour stocker les avis du produit
 
     options = Options()
-    options.add_argument('--headless')
+    #options.add_argument('--headless')
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
     options.headless = True  # Pour exécuter Chrome en mode headless (sans interface graphique)
