@@ -5,6 +5,7 @@ import re
 import time
 import spacy
 import sys
+import chromedriver_autoinstaller
 
 import numpy as np
 import pandas as pd
@@ -87,6 +88,8 @@ def scrape_amazon_reviews(product_url):
     reviews = []  # Dictionnaire pour stocker les avis du produit
     options = Options()
     options.headless = True  # Pour exécuter Chrome en mode headless (sans interface graphique)
+
+    chromedriver_autoinstaller.install()
 
     driver = webdriver.Chrome(options=options)
 
