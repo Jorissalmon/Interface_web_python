@@ -9,13 +9,16 @@ COPY requirements.txt .
 
 COPY chromedriver.exe .
 
+# Copier le contenu du répertoire de votre projet dans le conteneur
+COPY . .
+
 # Installer les dépendances Python
 RUN pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt \
     && python -m spacy download en_core_web_sm
 
-# Copier le contenu du répertoire de votre projet dans le conteneur
-COPY . .
+# Définir le chemin d'accès au chromedriver.exe dans une variable d'environnement
+ENV CHROMEDRIVER_PATH /app/chromedriver.exe
 
 EXPOSE 5000
 
