@@ -8,3 +8,4 @@ selenium==4.19.0
 spacy==3.7.4
 vaderSentiment==3.3.2
 vaderSentiment==3.3.2
+gunicorn==21.2.0

@@ -7,6 +7,8 @@ WORKDIR /app
 # Copier le fichier requirements.txt dans le conteneur
 COPY requirements.txt .
 
+COPY chromedriver.exe
+
 # Installer les dépendances Python
 RUN pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt \
