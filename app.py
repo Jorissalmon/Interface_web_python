@@ -14,6 +14,9 @@ from selectolax.parser import HTMLParser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from collections import Counter
 from openai import OpenAI
@@ -86,21 +89,15 @@ def wait_for_element(driver, selector, timeout=60):
 def scrape_amazon_reviews(product_url):
     reviews_by_product = {}  # Dictionnaire pour stocker les avis par produit
     reviews = []  # Dictionnaire pour stocker les avis du produit
+
     options = Options()
+    options.add_argument('--headless')
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
     options.headless = True  # Pour exécuter Chrome en mode headless (sans interface graphique)
 
     chromedriver_autoinstaller.install()
-
-    option.add_argument("--disable-gpu")
-    option.add_argument("--disable-extensions")
-    option.add_argument("--disable-infobars")
-    option.add_argument("--start-maximized")
-    option.add_argument("--disable-notifications")
-    option.add_argument('--headless')
-    option.add_argument('--no-sandbox')
-    option.add_argument('--disable-dev-shm-usage')
-
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=options)
 
     try:
         try:
