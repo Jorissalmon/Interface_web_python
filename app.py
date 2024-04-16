@@ -92,8 +92,8 @@ def scrape_amazon_reviews(product_url):
 
     options = Options()
     #options.add_argument('--headless')
-    options.add_argument('--no-sandbox')
-    options.add_argument('--disable-dev-shm-usage')
+    #options.add_argument('--no-sandbox')
+    #options.add_argument('--disable-dev-shm-usage')
     options.headless = False  # Pour exécuter Chrome en mode headless (sans interface graphique)
 
     chromedriver_autoinstaller.install()
